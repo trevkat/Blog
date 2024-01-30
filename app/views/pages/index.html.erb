@@ -3,4 +3,8 @@
 
 <%= link_to 'Home', root_path %>
 <p>Welcome!</p>
- <p><%= @welcome_message %></p>
+<ul>
+   <% @articles.map do |article| %>
+   <li><%= article.title || "Default Title" %></li>
+    <%end%>
+    </ul>

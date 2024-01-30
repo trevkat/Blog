@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
     def index
-        @welcome_message = "Hello World"
+        @articles = Article.all
+     #   @welcome_message = "Hello World"
     end
     def about
     end

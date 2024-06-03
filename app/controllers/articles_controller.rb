@@ -23,6 +23,11 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    render 'new'
+  end
+
+  def update
+    
   end
 
   private

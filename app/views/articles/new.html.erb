@@ -4,7 +4,7 @@
 <h1><%= @article.persisted? ? 'Edit' : 'Create' %> an Article</h1>
 
 // update method not action!
-<%= form_for @article, {url: {action: @article.persisted? ? 'update' : 'create'}} do |f| %>
+<%= form_for @article, 'put' do |f| %>
  <p>
   <%= f.label :title %><br>
   <%= f.text_field :title %>

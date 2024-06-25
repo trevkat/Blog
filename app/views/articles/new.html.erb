@@ -3,28 +3,11 @@
 
 <h1><%= @article.persisted? ? 'Edit' : 'Create' %> an Article</h1>
 
-// update method not action!
-<%= form_for @article, 'put' do |f| %>
- <p>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
- </p>
- <p>
-  <%= f.label :description %><br>
-  <%= f.text_area :description %>
- </p>
- <p>
-  <%= f.submit %>
- </p>
- <% if @article.errors.any? %>
- <h2>The following errors prevented the article from saving:</h2>
- <ul>
- <% @article.errors.full_messages.each do |msg|%>
- <li><%= msg %></li>
- <% end %>
- </ul>
-<% end %>
-<% end %>
+// update method not action!  
+<form action=<%= @article.persisted? ? article_path(id:@article.id) : articles_path  %> method= <%= @article.persisted? ? 'patch' : 'post' %>>
+
+
+</form>
 
 <%# how to display form %>
 <%# how to injest data to create a new Article %>

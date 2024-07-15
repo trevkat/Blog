@@ -5,8 +5,9 @@
 
 // update method not action!  
 <form action=<%= @article.persisted? ? article_path(id:@article.id) : articles_path  %> method= <%= @article.persisted? ? 'patch' : 'post' %>>
-
-
+<%= text_field(:article, :title, :placeholder => "title") %>
+<%= text_field(:article, :description, :placeholder => "description") %>
+<input type="submit" value="Submit"/>
 </form>
 
 <%# how to display form %>
